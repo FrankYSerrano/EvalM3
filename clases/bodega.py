@@ -38,8 +38,15 @@ class bodega:
 
 
 # Metodo 1 inventario de Bodega
+    def inv_bodega(self):
+        
+
 # Metodo 2 Reporte de Ramos pendientes
-# Metodo 3 Reporte de Ramos entregados 
+    def ramos_pendientes(self):
+
+# Metodo 3 Reporte de Ramos entregados
+    def ramos_entregados(self):
+
 
 if __name__ == "__main__":
     bodega1 = bodega()
