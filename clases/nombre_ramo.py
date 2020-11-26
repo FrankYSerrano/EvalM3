@@ -1,14 +1,14 @@
 #CLASE
-class especie_flor: 
+class nombre_ramo: 
 #ATRIBUTOS
     
 #METODOS:
     def __init__ (self, letra):
         self.letra = letra
-        print("se ha añadido una especie")  
+        print("se ha añadido un nombre de ramo")  
           
 if __name__ == "__main__":
-    especie_flor("a")
-    especie_flor("B")
+    nombre_ramo("A")
+    nombre_ramo("B")
 
            
