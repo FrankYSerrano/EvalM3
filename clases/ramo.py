@@ -6,6 +6,9 @@ class ramo(diseno_ramo):
     def __init__ (self, diseno):
         self.diseno = diseno
         print()  
+
+    def diseño_disponible(self,diseno)
+    
           
 if __name__ == "__main__":
     especie_flor("a")
