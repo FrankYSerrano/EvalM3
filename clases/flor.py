@@ -1,5 +1,5 @@
 from .especie_flor import especie_flor
-from tamano_flor import tamano_flor
+from .tamano_flor import tamano_flor
 
 #CLASE
 class flor (especie_flor, tamano_flor):
