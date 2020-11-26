@@ -31,9 +31,21 @@ class bodega:
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
 
+    def metodoX(self):
+#        self.flores = self.flores
+        for flor in self.flores:
+            print(flor[key], " ->", str(flor[str(flor)]))
+
+
+# Metodo 1 inventario de Bodega
+# Metodo 2 Reporte de Ramos pendientes
+# Metodo 3 Reporte de Ramos entregados 
+
 if __name__ == "__main__":
     bodega1 = bodega()
     bodega1.recibir_flores("a",15)
     bodega1.recibir_flores("a",25)
     bodega1.recibir_flores("b",15)
+    bodega1.metodoX()
+    
     pass
