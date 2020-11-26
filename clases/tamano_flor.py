@@ -8,7 +8,7 @@ class tamano_flor:
         print("se ha añadido un tamano")
                   
 if __name__ == "__main__":
-    tamano_flor("l")
+    tamano_flor("L")
     tamano_flor("s")
 
            

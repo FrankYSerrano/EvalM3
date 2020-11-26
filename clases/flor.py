@@ -1,20 +1,19 @@
 from .especie_flor import especie_flor
+from tamano_flor import tamano_flor
 
 #CLASE
 class flor (especie_flor, tamano_flor):
 #ATRIBUTOS
     
 #METODOS:
-    def __init__ (self, letra, cantidad):
-        self.nombre = letra
-        self.cantidad = cantidad
-#        super(especie_flor).self.__init__(letra)
+    def __init__ (self, letra, tamano):
+        super().__init__(letra)
         self.letra = letra
+        super().__init__(tamano)
+        self.tamano = tamano
+        self.nombre = letra + tamano
         #self.tamano_flor
-
-        #Clase01.__init__(self, arg1, arg2, arg3, arg4)
-        #Clase02.__init__(self, arg1, arg2, arg3, arg4)
-        print("Cree instancia de clase 03")
+        print("Cree instancia de clase 03", self.nombre)
 
     def met1 (self, arg1):
         print("Clase 03 Metodo 1")
@@ -26,5 +25,5 @@ class flor (especie_flor, tamano_flor):
         print("Clase 03 Metodo 3")
 
 if __name__ == "__main__":
-    flor1 = flor(5, "a")
+    flor1 = flor("g", "l")
     pass

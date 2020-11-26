@@ -9,6 +9,6 @@ class tamano_ramo:
                   
 if __name__ == "__main__":
     tamano_ramo("L")
-    tamano_ramo("S")
+    tamano_ramo("s")
 
            
