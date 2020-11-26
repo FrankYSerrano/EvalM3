@@ -17,6 +17,7 @@ class diseno_ramo ():
     '''    
     def __init__ (self, diseno):
         self.diseno = diseno
+        
 
         print("Clase 03 Metodo 1")
 

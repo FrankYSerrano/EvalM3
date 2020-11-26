@@ -1,7 +1,7 @@
 #CLASE
 class nombre_ramo: 
 #ATRIBUTOS
-    
+    nombre_ramo = {"A":(flor*args)}
 #METODOS:
     def __init__ (self, letra):
         self.letra = letra
