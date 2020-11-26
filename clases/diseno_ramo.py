@@ -1,13 +1,12 @@
-from .clase01 import Clase01
-from .clase02 import Clase02
+
 
 #CLASE
-class Clase03 (Clase01, Clase02):
+class Clase03 (flor):
 #ATRIBUTOS
     
 #METODOS:
-    def __init__ (self, arg1, arg2, arg3, arg4):
-        self.atr1 = arg1
+    def __init__ (self, nombre_ramo, tamano_ramo):
+        self.nombre_ramo = arg1
         self.atr2 = arg2
         self.atr3 = arg3
         self.atr4 = arg4
