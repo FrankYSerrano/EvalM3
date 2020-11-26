@@ -6,9 +6,10 @@ class bodega:
     def __init__ (self):
         #se debe añadir al diccionario una key con cada letra del abc
 
-        self.flores = {'a':0, 'b':0, 'c':0, 'd':0, 'e':0, 'f':0, 'g':0, 'h':0, 'i':0, 'j':0, 'k':0, 'l':0, 'm':0, 
-                        'n':0, 'o':0, 'p':0, 'q':0, 'r':0, 's':0, 't':0, 'u':0, 'v':0, 'w':0, 'x':0, 'y':0, 'z':0,
-                        }
+#        self.flores = {'a':0, 'b':0, 'c':0, 'd':0, 'e':0, 'f':0, 'g':0, 'h':0, 'i':0, 'j':0, 'k':0, 'l':0, 'm':0, 
+#                        'n':0, 'o':0, 'p':0, 'q':0, 'r':0, 's':0, 't':0, 'u':0, 'v':0, 'w':0, 'x':0, 'y':0, 'z':0,
+#                        }
+        self.flores = {"a":0, "b":0}
 
         self.disenos = []
         self.ramos_despachados = []
@@ -31,10 +32,11 @@ class bodega:
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
 
-    def metodoX(self):
+    def carga_stock(self):
 #        self.flores = self.flores
-        for flor in self.flores:
-            print(flor[key], " ->", str(flor[str(flor)]))
+#        for flor in self.flores:
+            print("Fernando")
+#            print(self.flores[flor] , " ->")
 
 
 # Metodo 1 inventario de Bodega
@@ -46,6 +48,6 @@ if __name__ == "__main__":
     bodega1.recibir_flores("a",15)
     bodega1.recibir_flores("a",25)
     bodega1.recibir_flores("b",15)
-    bodega1.metodoX()
+    bodega1.carga_stock()
     
     pass
