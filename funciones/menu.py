@@ -2,7 +2,7 @@ import os
 
 def menu():
     opcion = 'X'
-    opciones_posibles = ['1', '2', '3', '4', 'X']
+    opciones_posibles = ['1', '2', '3', '4', '5', '6', '7', 'X', 'x']
     control = True
     while control: 
         os.system("CLS")
@@ -14,11 +14,11 @@ def menu():
         print("* Reporte de inventario de Bodega -> 4 *") # Cristian
         print("* Reporte de Ramos pendientes     -> 5 *") # Cristian
         print("* Reporte de Ramos entregados     -> 6 *") # Cristian
-        print("* Evaluar Ramos Procesables       -> 7 *") # Cristian
+        print("* Evaluar Ramos Procesables       -> 7 *") # TODOS
         print("*       S   A   L   I   R         -> X *")
         print("*                                      *")
         print("****************************************")
-        opcion = input("Introduzca su opcion: ")
+        opcion = input("Introduzca su opcion: ").upper()
         if opcion in opciones_posibles:
             control = False
         else:
