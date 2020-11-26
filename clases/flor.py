@@ -8,18 +8,50 @@ class flor (especie_flor, tamano_flor):
 #METODOS:
     def __init__ (self, letra, tamano):
         super().__init__(letra)
-        self.letra = letra
+        self._letra = letra
         super().__init__(tamano)
-        self.tamano = tamano
-        self.nombre = letra + tamano
+        self._tamano = tamano
+        self._nombre = letra + tamano
         #self.tamano_flor
-        print("Cree instancia de clase 03", self.nombre)
+        print("retorno el nombre letra_tamaño", self.nombre)
 
-    def met1 (self, arg1):
-        print("Clase 03 Metodo 1")
+    ##### getters and setters ######
 
-    def met2 (self, arg1):
-        print("Clase 03 Metodo 2")
+    @property ## propiedad getter
+    def letra (self):
+        return self._nombre
+
+    @letra.setter ## propiedad setter
+    def letra (self, nuevo):
+
+        print("modificando letra..")
+        self._letra = nuevo
+        print("la letra ha sido modificada")
+        print(self._letra)
+
+    @letra.deleter ## propiedad deleter
+    def letra(self):
+        print("Borrando letra")
+        del self.letra
+
+    
+    @property ## propiedad getter
+    def tamano (self):
+        return self._tamano
+
+    @tamano.setter ## propiedad setter
+    def tamano (self, nuevo):
+
+        print("modificando letra..")
+        self._tamano = nuevo
+        print("la letra ha sido modificada")
+        print(self._tamano)
+    
+
+    @tamano.deleter ## propiedad deleter
+    def tamano(self):
+        print("Borrando tamaño")
+        del self.tamano
 
     def met3 (self, arg1):
         print("Clase 03 Metodo 3")

@@ -1,7 +1,28 @@
 #CLASE
 class nombre_ramo: 
 #ATRIBUTOS
-    nombre_ramo = {"A":(flor*args)}
+    letra = [ "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O",
+              "P",
+              "A",
+              "B",
+              "C",
+              "D",
+
+    ]
 #METODOS:
     def __init__ (self, letra):
         self.letra = letra
