@@ -1,13 +1,14 @@
 from .especie_flor import especie_flor
 
 #CLASE
-class flor (especie_flor):
+class flor (especie_flor, tamano_flor):
 #ATRIBUTOS
     
 #METODOS:
-    def __init__ (self, cantidad,letra):
+    def __init__ (self, letra, cantidad):
+        self.nombre = letra
         self.cantidad = cantidad
-        super(especie_flor).self.__init__(letra)
+#        super(especie_flor).self.__init__(letra)
         self.letra = letra
         #self.tamano_flor
 
