@@ -39,7 +39,7 @@ while ciclo:
     elif seleccion =='7':
         print(FlorLinda._ramo_encargado)
     else:
-        print("CHAO!")
+        print("G r a c i a s   p o r   s u   c o m p r a!")
         break
     time.sleep(2)
 
