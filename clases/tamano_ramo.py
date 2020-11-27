@@ -1,7 +1,7 @@
 #CLASE
 class tamano_ramo: 
 #ATRIBUTOS
-    
+    tamanos = ["s", "l"]
 #METODOS:
     def __init__ (self, tamano):
         self.tamano = tamano

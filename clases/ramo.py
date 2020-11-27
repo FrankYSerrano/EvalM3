@@ -1,3 +1,4 @@
+from .diseno_ramo import diseno_ramo
 #CLASE
 class ramo(diseno_ramo): 
 #ATRIBUTOS
@@ -22,6 +23,7 @@ class ramo(diseno_ramo):
 
 
 
+
     def diseño_disponible(self):
         self.nombre = nombre
         self.diseno = diseno
@@ -35,4 +37,3 @@ if __name__ == "__main__":
    # especie_flor("B")
    ramo1 = ramo()
 
-           

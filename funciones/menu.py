@@ -1,4 +1,5 @@
 import os
+import time
 
 def menu():
     opcion = 'X'
@@ -23,6 +24,7 @@ def menu():
             control = False
         else:
             print("Opcion invalida")
+            time.sleep(2)
     return opcion
 
 #PRUEBA UNITARIA

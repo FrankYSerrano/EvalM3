@@ -4,7 +4,7 @@ from .tamano_flor import tamano_flor
 #CLASE
 class flor (especie_flor, tamano_flor):
 #ATRIBUTOS
-    
+    flores = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 #METODOS:
     def __init__ (self, letra, tamano):
         super().__init__(letra)
@@ -13,7 +13,7 @@ class flor (especie_flor, tamano_flor):
         self._tamano = tamano
         self._nombre = letra + tamano
         #self.tamano_flor
-        print("retorno el nombre letra_tamaño", self.nombre)
+        print("retorno el nombre letra_tamaño", self._nombre)
 
     ##### getters and setters ######
 

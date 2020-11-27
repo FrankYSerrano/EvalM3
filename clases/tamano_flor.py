@@ -1,7 +1,8 @@
 #CLASE
 class tamano_flor: 
 #ATRIBUTOS
-    
+    tamanos = ["S", "L"]
+
 #METODOS:
     def __init__ (self, tamano):
         self.tamano = tamano
