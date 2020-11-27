@@ -1,6 +1,6 @@
 
 #CLASE
-class diseno_ramo ():
+class diseno_ramo (flor,tamano,bodega):
 #ATRIBUTOS
     
    
