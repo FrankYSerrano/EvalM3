@@ -1,4 +1,4 @@
-#CLASE
+import time 
 class bodega: 
 #ATRIBUTOS
     
@@ -31,15 +31,21 @@ class bodega:
     def despachar_ramos (self, ramo):
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
-
+###############Manejo Stock###########
     def carga_stock(self):
-#        self.flores = self.flores
-#        for flor in self.flores:
-            print("Fernando")
-#            print(self.flores[flor] , " ->")
+        print("Estamos revistando el stock en bodega...")
+        time.sleep(5)
+        for flor in self.flores:
+            while self.flores[flor] < 20:
+                if self.flores[flor] < 20:
+                    self.flores[flor] = self.flores[flor] + 20
+                    print("Añadimos flores con stock bajo")
+                    time.sleep(0.2)
+                else:
+                    pass
 
-
-### Getter, setters and  Del
+        print("listo...")
+        print("Gracias por la espera")
 
   ############# Propiedad flores #############
 
@@ -114,5 +120,8 @@ if __name__ == "__main__":
     bodega1.recibir_flores("a",25)
     bodega1.recibir_flores("b",15)
     bodega1.carga_stock()
+    print(bodega1.flores)
+    bodega1.carga_stock()
+    print(bodega1.flores)
     
     pass
