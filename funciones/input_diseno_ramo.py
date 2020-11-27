@@ -73,7 +73,7 @@ def input_diseno_ramo(nombresPosibles, tamanosPosibles, floresPosibles):
             if l.upper() == 'N':
                 otra = False
             otra2 = False
-    ramoDisenado = ramoDisenado + str(totalFlores)
+    ramoDisenado = ramoDisenado + "_" + str(totalFlores)
 #    print(ramoDisenado)
     return ramoDisenado
     
