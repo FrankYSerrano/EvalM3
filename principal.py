@@ -12,6 +12,8 @@ FlorLinda = c.bodega()
 NombresRamos = c.nombre_ramo("A")
 #Creacion de Tamanos de RamoPosibles
 TamanoRamos = c.tamano_ramo("A")
+#Creacion de Instancia RAMO
+RamoDeseado = c.ramo()
 ciclo = True
 while ciclo:
     seleccion = f.menu()
@@ -26,7 +28,8 @@ while ciclo:
         FlorLinda.disenar_ramos(x)
         print("CHAO!2")
     elif seleccion =='3':
-        print("Seleccione el ramo a ordenar: ", FlorLinda._disenos)
+        RamoDeseado.pregunta(FlorLinda._disenos)
+#        print("Seleccione el ramo a ordenar: ", FlorLinda._disenos)
     elif seleccion =='4':
 #        FlorLinda.Metodo1() inventario de Bodega
         print(FlorLinda.flores)

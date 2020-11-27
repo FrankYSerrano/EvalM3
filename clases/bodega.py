@@ -8,12 +8,10 @@ class bodega:
         self.flores = {'a':0, 'b':0, 'c':0, 'd':0, 'e':0, 'f':0, 'g':0, 'h':0, 'i':0, 'j':0, 'k':0, 'l':0, 'm':0, 
                         'n':0, 'o':0, 'p':0, 'q':0, 'r':0, 's':0, 't':0, 'u':0, 'v':0, 'w':0, 'x':0, 'y':0, 'z':0}
 
-        self._disenos = []
+        self._disenos = ['As8y7t2w17','Cs8y7t15w30','DL68p17z5a90','Cs4y3t2w9','GL8U7P5X20']
         self._ramos_despachados = []
         self._ramo_encargado = []
         print("Cree instancia bodega")
-
-
 
 # METODOS: 
         #### recibir flores, recibe como parametro 1 letra y la cantidad de flores ######
@@ -39,8 +37,7 @@ class bodega:
         print("Clase 01 Metodo 3")
 
     def evaluar_ramos(self):
-        for ramo in self._ramo_encargado:
-            
+        for ramo in self._ramo_encargado:            
             print(ramo)
 
 
