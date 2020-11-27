@@ -1,4 +1,5 @@
 import time 
+import os
 class bodega: 
 #ATRIBUTOS
     
@@ -38,9 +39,42 @@ class bodega:
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
 
-    def encargar_ramos (self, ramo):
+    def encargar_ramos (self, nombre, disenos):
         self._ramo_encargado.append(ramo)
         print("Clase 01 Metodo 3")
+
+    def pregunta(self):    
+        print(" Buenas, me podrías decir tú nombre? ")
+        nombre = input("ingrese nombre: ") # key
+        print("este es un nombre: ", nombre)
+        print()
+        print("            ### Diseños disponibles ### ")
+        print("  Estos son los diseños disponibles:       ")
+        
+
+        while True:
+
+            time.sleep(1)
+            os.system("cls")
+            
+
+            seleccion = 1
+
+            for disenos in self._disenos:
+                print("Diseño N° ",str(seleccion), ":", disenos)
+                seleccion = seleccion + 1
+
+            z = input("Elige un diseño de ramo: ")
+            try:
+                if int(z) in range(1,seleccion):
+                    print("lo que sea")
+                    self.encargar_ramos(nombre,self._disenos[seleccion])
+                    break
+                else:
+                    print("Selección fuera de rango, try again")
+
+            except Exception:
+                print("seleccion invalida ")        
 
 ###########################################################################
 #_ramos_despachados Y _ramo_encargado DEBEN SER DICCIONARIOS YA QUE TIENE UN DUENO Y UN DISENO!!!!!
