@@ -36,9 +36,11 @@ class bodega:
         self._ramo_encargado.append(ramo)
         print("Clase 01 Metodo 3")
 
+###########################################################################
     def evaluar_ramos(self):
         for ramo in self._ramo_encargado:            
             print(ramo)
+###########################################################################
 
 
 ###############Manejo Stock###########
