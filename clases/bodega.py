@@ -23,6 +23,8 @@ class bodega:
         print(self.flores)
         print("añadi una flor a la lista")
 
+    def anti(self):
+        print(self._ramo_encargado)
 
     def disenar_ramos (self, diseno):
         self.disenos.append(diseno)
@@ -31,6 +33,16 @@ class bodega:
     def despachar_ramos (self, ramo):
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
+
+    def encargar_ramos (self, ramo):
+        self._ramo_encargado.append(ramo)
+        print("Clase 01 Metodo 3")
+
+    def evaluar_ramos(self):
+        for ramo in self._ramo_encargado:
+            print(ramo)
+
+
 ###############Manejo Stock###########
     def carga_stock(self):
         print("Estamos revistando el stock en bodega...")
@@ -67,6 +79,25 @@ class bodega:
     def flores(self):
         print("Borrando tamaño")
         del self._flores
+
+  ############# Propiedad ramos encargados #############
+
+  
+    @property ## propiedad getter
+    def ramo_encargado (self):
+        return self._ramo_encargado
+
+    @ramo_encargado.setter ## propiedad setter
+    def ramo_encargado (self, nuevo):
+        print("modificando letra..")
+        self._ramo_encargado = nuevo
+        print("la letra ha sido modificada")
+        print(self._ramo_encargado)
+
+    @ramo_encargado.deleter ## propiedad deleter
+    def ramo_encargado(self):
+        print("Borrando tamaño")
+        del self._ramo_encargado
 
  
  ############## Propiedad  diseños ##############
@@ -116,12 +147,16 @@ class bodega:
 
 if __name__ == "__main__":
     bodega1 = bodega()
-    bodega1.recibir_flores("a",15)
-    bodega1.recibir_flores("a",25)
-    bodega1.recibir_flores("b",15)
     bodega1.carga_stock()
     print(bodega1.flores)
-    bodega1.carga_stock()
-    print(bodega1.flores)
-    
+    bodega1.encargar_ramos('As8y7t2w17')
+    bodega1.encargar_ramos('Cs8y7t15w30')
+    bodega1.encargar_ramos('DL68p17z5a90')
+    bodega1.encargar_ramos('Cs4y3t2w9')
+    bodega1.encargar_ramos('GL8U7P5X20')
+    print(bodega1.anti())
+    bodega1.evaluar_ramos()
+
+#    print(bodega1._ramo_encargado)
+
     pass

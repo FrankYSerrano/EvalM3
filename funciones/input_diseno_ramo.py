@@ -27,13 +27,13 @@ def input_diseno_ramo(nombresPosibles, tamanosPosibles, floresPosibles):
         print("Ramo a definir: ", ramoDisenado)
         print("Seleccione el Tamano del ramo de los posibes: ", tamanosPosibles)
         l=input()
-        if not l.upper() in tamanosPosibles:
+        if not l.lower() in tamanosPosibles:
             print("Introdujo un valor invalido")
             time.sleep(2)
         else:
 #            print("Usted introdujo: ", l.upper())
             condicion1 = False
-            ramoDisenado = ramoDisenado + l.upper()
+            ramoDisenado = ramoDisenado + l.lower()
     #Loop para incluir flores y sus cantidades
     otra = True
     while otra:
