@@ -215,8 +215,6 @@ class bodega:
         print("Borrando tamaño")
         del self._ramos_despachados
 
-
-
 if __name__ == "__main__":
     bodega1 = bodega()
     bodega1.evaluar_ramos()
