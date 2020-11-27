@@ -18,9 +18,44 @@ class bodega:
 #        self._ramo_encargado = {'De_A_para_B':'As8y7t2w_17', 'De_C_para_A':'Cs8y7t1w_16', 'De_C_para_B':'DL6p7z5a_18',
 #                                'De_Z_para_H':'Cs4y3t2w_9', 'De_C_para_D':'Cs8y7t1w_16', 'De_F_para_B':'GL8U7P5X_20'}
         print("Cree instancia bodega")
-
+#ramos = {'Cs8y7t15w30':5,'DL68p17z5a90':30, 'Cs4y3t2w9':14, 'GL8U7P5X20':5}
 # METODOS: 
         #### recibir flores, recibe como parametro 1 letra y la cantidad de flores ######
+
+    def Inv_bodega(self):
+        print("_______________________________________________________________________________")
+        print("stock de flores")
+        print("-------------------------------------------------------------------------------")
+        for flr in self.flores:
+            cuenta = 0
+            print("cantidad flor ", str(flr),"=",self.flores[flr])
+            cuenta +=1
+        time.sleep(3)
+        return
+
+    def ramos_pendientes(self):
+        print("_______________________________________________________________________________")
+        print("ramos por entregar")
+        print("--------------------------------------------------------------------------------")
+        for rmo in self._ramo_encargado:
+            cuenta = 0
+            print("cliente :", str(rmo)," diseño de ramo :",self._ramo_encargado[rmo])
+            cuenta +=1
+        print("-------------------------------------------------------------------------------")
+        time.sleep(3)
+        return
+        
+    def ramos_entregados(self): 
+        print("_______________________________________________________________________________")
+        print("ramos entregados")
+        print("--------------------------------------------------------------------------------")
+        for rmo in self._ramos_despachados:
+            cuenta = 0
+            print("cliente ", str(rmo),"diseño de ramo : ",self._ramos_despachados[rmo])
+            cuenta +=1
+        print("-------------------------------------------------------------------------------")
+        time.sleep(3)
+        return
 
     def recibir_flores (self,letra, cantidad):
         self.flores[letra] = self.flores[letra] + cantidad
@@ -179,8 +214,6 @@ class bodega:
     def ramos_despachados(self):
         print("Borrando tamaño")
         del self._ramos_despachados
-
-
 
 if __name__ == "__main__":
     bodega1 = bodega()

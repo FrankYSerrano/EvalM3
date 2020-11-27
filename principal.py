@@ -31,18 +31,15 @@ while ciclo:
         RamoDeseado.pregunta(FlorLinda._disenos)
 #        print("Seleccione el ramo a ordenar: ", FlorLinda._disenos)
     elif seleccion =='4':
-#        FlorLinda.Metodo1() inventario de Bodega
-        print(FlorLinda.flores)
+        FlorLinda.Inv_bodega()
     elif seleccion =='5':
-#        FlorLinda. Metodo 2 Reporte de Ramos pendientes
-        print(FlorLinda._ramo_encargado)
+        FlorLinda.ramos_pendientes()
     elif seleccion =='6':
-#        FlorLinda. Metodo 3 Reporte de Ramos entregados 
-        print(FlorLinda.ramos_despachados)
+        FlorLinda.ramos_entregados() 
     elif seleccion =='7':
         print(FlorLinda._ramo_encargado)
     else:
-        print("CHAO!")
+        print("G r a c i a s   p o r   s u   c o m p r a!")
         break
     time.sleep(2)
 
