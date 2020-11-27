@@ -22,7 +22,7 @@ while ciclo:
         time.sleep(2)
     elif seleccion =='2':
         #LLEVAR EL CODIGO DE LA FUNCION AL METODO DISENAR RAMOS: DEBE QUEDAR >> FlorLinda.disenar_ramos() 
-        x  = f.input_diseno_ramo(NombresRamos.nombre_ramo, TamanoRamos.tamanos, FlorLinda.flores)
+        x  = f.input_diseno_ramo(NombresRamos.nombre_ramo, TamanoRamos.tamanos, FloresDisp.flores)
         FlorLinda.disenar_ramos(x)
         print("CHAO!2")
     elif seleccion =='3':

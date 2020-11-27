@@ -9,8 +9,8 @@ def menu():
         os.system("CLS")
         print("***************** MENU *****************")
         print("*                                      *")
-        print("* Recepcion de Flores en Bodega   -> 1 *") # Fernando
-        print("* Generar Disenos de Ramos        -> 2 *") # Frank
+        print("* Recepcion de Flores en Bodega   -> 1 *") 
+        print("* Generar Disenos de Ramos        -> 2 *") 
         print("* Seleccionar (Ordenar) Ramos     -> 3 *") # Guido
         print("* Reporte de inventario de Bodega -> 4 *") # Cristian
         print("* Reporte de Ramos pendientes     -> 5 *") # Cristian

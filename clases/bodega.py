@@ -6,10 +6,7 @@ class bodega:
     def __init__ (self):
         #se debe añadir al diccionario una key con cada letra del abc
         self.flores = {'a':0, 'b':0, 'c':0, 'd':0, 'e':0, 'f':0, 'g':0, 'h':0, 'i':0, 'j':0, 'k':0, 'l':0, 'm':0, 
-
-                        'n':0, 'o':0, 'p':0, 'q':0, 'r':0, 's':0, 't':0, 'u':0, 'v':0, 'w':0, 'x':0, 'y':0, 'z':0,
-                        }
-
+                        'n':0, 'o':0, 'p':0, 'q':0, 'r':0, 's':0, 't':0, 'u':0, 'v':0, 'w':0, 'x':0, 'y':0, 'z':0}
 
         self._disenos = []
         self._ramos_despachados = []
@@ -36,20 +33,6 @@ class bodega:
     def despachar_ramos (self, ramo):
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
-    
-    def metodoX(self):
-#       self.flores = self.flores
-        for flor in self.flores:
-            if self.flores[flor] <= 30:
-                self.flores[flor]  = 30 - self.flores[flor]
-                print(self.flores[flor])
-            else:
-                
-
-
-# Metodo 1 inventario de Bodega
-# Metodo 2 Reporte de Ramos pendientes
-# Metodo 3 Reporte de Ramos entregados 
 
     def encargar_ramos (self, ramo):
         self._ramo_encargado.append(ramo)
@@ -57,6 +40,7 @@ class bodega:
 
     def evaluar_ramos(self):
         for ramo in self._ramo_encargado:
+            
             print(ramo)
 
 
@@ -176,4 +160,4 @@ if __name__ == "__main__":
 
 #    print(bodega1._ramo_encargado)
 
-    
+    pass
