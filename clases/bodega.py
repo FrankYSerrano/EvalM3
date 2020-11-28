@@ -74,8 +74,8 @@ class bodega:
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
 
-    def encargar_ramos (self, nombre, disenos):
-        self._ramo_encargado.append(ramo)
+    def encargar_ramos (self, nombre, diseno):
+        self._ramo_encargado[nombre] = diseno
         print("Clase 01 Metodo 3")
 
     def pregunta(self):    
@@ -86,8 +86,8 @@ class bodega:
         print("            ### Diseños disponibles ### ")
         print("  Estos son los diseños disponibles:       ")
         
-
-        while True:
+        condicion = True
+        while condicion:
 
             time.sleep(1)
             os.system("cls")
@@ -103,8 +103,8 @@ class bodega:
             try:
                 if int(z) in range(1,seleccion):
                     print("lo que sea")
-                    self.encargar_ramos(nombre,self._disenos[seleccion])
-                    break
+                    self.encargar_ramos(nombre,disenos)
+                    condicion = False
                 else:
                     print("Selección fuera de rango, try again")
 
@@ -251,10 +251,16 @@ class bodega:
 
 if __name__ == "__main__":
     bodega1 = bodega()
-    bodega1.evaluar_ramos()
-    bodega1.carga_stock()
+    #bodega1.evaluar_ramos()
+    #bodega1.carga_stock()
     print(bodega1.anti())
-    bodega1.evaluar_ramos()
+    
+    #bodega1.evaluar_ramos()
+
+    bodega1.ramos_pendientes()
+    bodega1.pregunta()
+    bodega1.ramos_pendientes()
+    
 
     #print(bodega1.flores)
     # bodega1.encargar_ramos('As8y7t2w17')
