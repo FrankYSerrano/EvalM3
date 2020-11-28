@@ -15,7 +15,7 @@ def menu():
         print("* Reporte de inventario de Bodega -> 4 *") # Cristian
         print("* Reporte de Ramos pendientes     -> 5 *") # Cristian
         print("* Reporte de Ramos entregados     -> 6 *") # Cristian
-        print("* Evaluar Ramos Procesables       -> 7 *") # TODOS
+        print("* Despachar un Ramo               -> 7 *") # TODOS
         print("*       S   A   L   I   R         -> X *")
         print("*                                      *")
         print("****************************************")

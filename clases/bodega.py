@@ -114,54 +114,65 @@ class bodega:
 ###########################################################################
 #_ramos_despachados Y _ramo_encargado DEBEN SER DICCIONARIOS YA QUE TIENE UN DUENO Y UN DISENO!!!!!
     def evaluar_ramos(self):
-        for ramo in self._ramo_encargado:            
-            print(ramo, " encargo el diseno: ", self._ramo_encargado[ramo])
-            #Trabajando sobre el diseno encargado!
-            #procede = verdadero hasta que no haya disponibilidad de alguna flor en el diseno
-            procede = True
-            disenoAevaluar = self._ramo_encargado[ramo]
-            while procede:
-                #Se analiza desde el 3er caracter en adelante hasta que consiga _; Va de 2 en 2
-                #Al salir de este for si PROCEDE
-                for letra in range(2, disenoAevaluar.find("_"), 2):
-                    cantx = int(disenoAevaluar[letra])
-                    florx = disenoAevaluar[letra +1].lower()
-                    print("Evaluando disponibilidad de flor: ", florx, " necesito: ", cantx)
+        while len(self.ramo_encargado) > 0 :# este while es solo de prueba !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            for ramo in self._ramo_encargado:            
+                print(ramo, " encargo el diseno: ", self._ramo_encargado[ramo])
+                #Trabajando sobre el diseno encargado!
+                #procede = verdadero hasta que no haya disponibilidad de alguna flor en el diseno
+                procede = True
+                disenoAevaluar = self._ramo_encargado[ramo]
+                while procede:
+                    #Se analiza desde el 3er caracter en adelante hasta que consiga _; Va de 2 en 2
+                    #Al salir de este for si PROCEDE
+                    for letra in range(2, disenoAevaluar.find("_"), 2):
+                        cantx = int(disenoAevaluar[letra])
+                        florx = disenoAevaluar[letra +1].lower()
+                        print("Evaluando disponibilidad de flor: ", florx, " necesito: ", cantx)
 
-#INCLUIR ACA LA VALIDACION DE SI HAY SUFICIENTE EN BODEGA Y REMPLAZAR EL "if not procede:"!!!!                    
-                    if self.flores[florx] < cantx:
-                        print("NO HAY SUFICIENTE")
-                        #Se modifica procede para salir del while
-                        procede = False
-                        #se usa break para salir del for
-                        break
+    #INCLUIR ACA LA VALIDACION DE SI HAY SUFICIENTE EN BODEGA Y REMPLAZAR EL "if not procede:"!!!!                    
+                        if self.flores[florx] < cantx:
+                            print("NO HAY SUFICIENTE")
+                            #Se modifica procede para salir del while
+                            procede = False
+                            #se usa break para salir del for
+                            break
+                        else:
+                            print("HAY SUFICIENTE, EVALUA LA OTRA FLOR")
+    # En este punto procede indica si se puede procesar el ramo o no!
+                    if not procede:
+                        print("Sorry! No se puede procesar")
                     else:
-                        print("HAY SUFICIENTE, EVALUA LA OTRA FLOR")
-# En este punto procede indica si se puede procesar el ramo o no!
-                if not procede:
-                    print("Sorry! No se puede procesar")
-                else:
-                    print("ALELUYA!!!! Se puede despachar el ramo!")
-#                    self.rebaja_stock(ramo)
-#                    self.despachar_ramos(ramo)
-#                    self._ramo_encargado.QUITAR(ramo)
-                    procede = False
+                        print("ALELUYA!!!! Se puede despachar el ramo!")
+                        self.rebaja_stock(ramo)
+                        print("paso1")
+                    
+                        self._ramos_despachados[ramo] = disenoAevaluar
+    #                    self.despachar_ramos(ramo)
+    #                    self._ramo_encargado.QUITAR(ramo)
+                        
+                        self.ramo_encargado.pop(ramo)
+                        break
+                        #return self.ramo_encargado
+                        
+  
+        
+                    
 
 ###########################################################################
-    def rebaja_stock(self):
-        for ramo in self._ramo_encargado:           
-            procede = True
-            disenoAevaluar = self._ramo_encargado[ramo]
-            while procede:
-                for letra in range(2, disenoAevaluar.find("_"), 2):
-                    cantx = int(disenoAevaluar[letra])
-                    florx = disenoAevaluar[letra +1].lower()
-                    minus = cantx
-                    self.flores[florx] = self.flores[florx] - minus
-                if not procede:
-                    print("Sorry! No se puede procesar")
-                else:
-                    procede = False
+    def rebaja_stock(self,ramo):
+       # for ramo in self._ramo_encargado:           
+        #    procede = True
+        disenoAevaluar = self._ramo_encargado[ramo]
+          #while procede:
+        for letra in range(2, disenoAevaluar.find("_"), 2):
+            cantx = int(disenoAevaluar[letra])
+            florx = disenoAevaluar[letra +1].lower()
+            minus = cantx
+            self.flores[florx] = self.flores[florx] - minus
+        #if not procede:
+        #    print("Sorry! No se puede procesar")
+        #else:
+        #    procede = False
 
 ###############Manejo Stock###########
     def carga_stock(self):
@@ -265,30 +276,11 @@ class bodega:
 
 if __name__ == "__main__":
     bodega1 = bodega()
-    #bodega1.evaluar_ramos()
-    #bodega1.carga_stock()
+  
+    bodega1.carga_stock()
     print(bodega1.anti())
 
     bodega1.evaluar_ramos()
-    print(bodega1.flores)
-    bodega1.rebaja_stock()
-    print(bodega1.flores)
-
     
-    #bodega1.evaluar_ramos()
-
-    bodega1.ramos_pendientes()
-    bodega1.pregunta()
-    bodega1.ramos_pendientes()
-    
-
-    #print(bodega1.flores)
-    # bodega1.encargar_ramos('As8y7t2w17')
-    # bodega1.encargar_ramos('Cs8y7t15w30')
-    # bodega1.encargar_ramos('DL68p17z5a90')
-    # bodega1.encargar_ramos('Cs4y3t2w9')
-    # bodega1.encargar_ramos('GL8U7P5X20')
-    print(bodega1._ramo_encargado)
-
 
     pass

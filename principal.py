@@ -28,7 +28,7 @@ while ciclo:
         FlorLinda.disenar_ramos(x)
         print("CHAO!2")
     elif seleccion =='3':
-        RamoDeseado.pregunta(FlorLinda._disenos)
+        FlorLinda.pregunta()
 #        print("Seleccione el ramo a ordenar: ", FlorLinda._disenos)
     elif seleccion =='4':
         FlorLinda.Inv_bodega()
@@ -37,7 +37,8 @@ while ciclo:
     elif seleccion =='6':
         FlorLinda.ramos_entregados() 
     elif seleccion =='7':
-        print(FlorLinda._ramo_encargado)
+        
+        FlorLinda.evaluar_ramos()
     else:
         print("G r a c i a s   p o r   s u   c o m p r a!")
         break
