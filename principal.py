@@ -3,7 +3,6 @@ import funciones as f
 import time
 
 x = ""
-
 #Creacion de Instancia de FLOR
 FloresDisp = c.flor("L","l")
 #Creacion de Instancia BODEGA
@@ -17,30 +16,25 @@ RamoDeseado = c.ramo()
 ciclo = True
 while ciclo:
     seleccion = f.menu()
-    print(seleccion)
+#    print(seleccion)
     if seleccion == '1':
-        print("Recepcioanndo Flores... por favor espere...")
+        print("Recepcioando Flores... por favor espere...")
         FlorLinda.carga_stock()
         time.sleep(2)
-    elif seleccion =='2':
-        #LLEVAR EL CODIGO DE LA FUNCION AL METODO DISENAR RAMOS: DEBE QUEDAR >> FlorLinda.disenar_ramos() 
+    elif seleccion =='2': #Disenar ramos
         x  = f.input_diseno_ramo(NombresRamos.nombre_ramo, TamanoRamos.tamanos, FloresDisp.flores)
         FlorLinda.disenar_ramos(x)
-        print("CHAO!2")
-    elif seleccion =='3':
+    elif seleccion =='3': #Encargar ramo
         FlorLinda.pregunta()
-#        print("Seleccione el ramo a ordenar: ", FlorLinda._disenos)
-    elif seleccion =='4':
+    elif seleccion =='4': #4Reporte de inventario de flores en bodega
         FlorLinda.Inv_bodega()
-    elif seleccion =='5':
+    elif seleccion =='5': #Reporte de ramos pendientes por procesar
         FlorLinda.ramos_pendientes()
-    elif seleccion =='6':
+    elif seleccion =='6': #Reporte de ramos ya entregados
         FlorLinda.ramos_entregados() 
-    elif seleccion =='7':
-        
+    elif seleccion =='7': #Evaluar ramos pendientes y procesar los que se pueda
         FlorLinda.evaluar_ramos()
     else:
         print("G r a c i a s   p o r   s u   c o m p r a!")
         break
     time.sleep(2)
-

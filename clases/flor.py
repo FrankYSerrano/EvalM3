@@ -16,14 +16,12 @@ class flor (especie_flor, tamano_flor):
         print("retorno el nombre letra_tamaño", self._nombre)
 
     ##### getters and setters ######
-
     @property ## propiedad getter
     def letra (self):
         return self._nombre
 
     @letra.setter ## propiedad setter
     def letra (self, nuevo):
-
         print("modificando letra..")
         self._letra = nuevo
         print("la letra ha sido modificada")
@@ -33,7 +31,6 @@ class flor (especie_flor, tamano_flor):
     def letra(self):
         print("Borrando letra")
         del self.letra
-
     
     @property ## propiedad getter
     def tamano (self):
@@ -41,12 +38,10 @@ class flor (especie_flor, tamano_flor):
 
     @tamano.setter ## propiedad setter
     def tamano (self, nuevo):
-
         print("modificando letra..")
         self._tamano = nuevo
         print("la letra ha sido modificada")
         print(self._tamano)
-    
 
     @tamano.deleter ## propiedad deleter
     def tamano(self):
@@ -56,6 +51,7 @@ class flor (especie_flor, tamano_flor):
     def met3 (self, arg1):
         print("Clase 03 Metodo 3")
 
+# AREA DE PRUEBAS UNITARIAS
 if __name__ == "__main__":
     flor1 = flor("g", "l")
     pass
