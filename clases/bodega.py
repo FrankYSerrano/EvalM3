@@ -114,6 +114,20 @@ class bodega:
                     procede = False
 
 ###########################################################################
+    def rebaja_stock(self):
+        for ramo in self._ramo_encargado:           
+            procede = True
+            disenoAevaluar = self._ramo_encargado[ramo]
+            while procede:
+                for letra in range(2, disenoAevaluar.find("_"), 2):
+                    cantx = int(disenoAevaluar[letra])
+                    florx = disenoAevaluar[letra +1].lower()
+                    minus = cantx
+                    self.flores[florx] = self.flores[florx] - minus
+                if not procede:
+                    print("Sorry! No se puede procesar")
+                else:
+                    procede = False
 
 ###############Manejo Stock###########
     def carga_stock(self):
@@ -221,6 +235,9 @@ if __name__ == "__main__":
     bodega1.carga_stock()
     print(bodega1.anti())
     bodega1.evaluar_ramos()
+    print(bodega1.flores)
+    bodega1.rebaja_stock()
+    print(bodega1.flores)
 
     #print(bodega1.flores)
     # bodega1.encargar_ramos('As8y7t2w17')
@@ -228,6 +245,7 @@ if __name__ == "__main__":
     # bodega1.encargar_ramos('DL68p17z5a90')
     # bodega1.encargar_ramos('Cs4y3t2w9')
     # bodega1.encargar_ramos('GL8U7P5X20')
-#    print(bodega1._ramo_encargado)
+    print(bodega1._ramo_encargado)
+
 
     pass
