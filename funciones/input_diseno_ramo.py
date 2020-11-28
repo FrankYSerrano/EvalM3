@@ -17,7 +17,6 @@ def input_diseno_ramo(nombresPosibles, tamanosPosibles, floresPosibles):
             print("Introdujo un valor invalido")
             time.sleep(2)
         else:
-#            print("Usted introdujo: ", l.upper())
             condicion1 = False
             ramoDisenado = l.upper()
 #Ingreso de Tamano de RAMO
@@ -31,7 +30,6 @@ def input_diseno_ramo(nombresPosibles, tamanosPosibles, floresPosibles):
             print("Introdujo un valor invalido")
             time.sleep(2)
         else:
-#            print("Usted introdujo: ", l.upper())
             condicion1 = False
             ramoDisenado = ramoDisenado + l.lower()
     #Loop para incluir flores y sus cantidades
@@ -64,7 +62,6 @@ def input_diseno_ramo(nombresPosibles, tamanosPosibles, floresPosibles):
                 print("Introdujo un valor invalido")
                 time.sleep(2)
             else:
- #               print("Usted introdujo: ", l.lower())
                 condicion1 = False
                 ramoDisenado = ramoDisenado + l.lower()
         otra2=True

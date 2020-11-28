@@ -6,9 +6,8 @@ class tamano_ramo:
     def __init__ (self, tamano):
         self.tamano = tamano
         print("se ha añadido un tamano de ramo")
-                  
+
+# AREA DE PRUEBAS UNITARIAS
 if __name__ == "__main__":
     tamano_ramo("L")
     tamano_ramo("s")
-
-           

@@ -27,7 +27,7 @@ def menu():
             time.sleep(2)
     return opcion
 
-#PRUEBA UNITARIA
+# AREA DE PRUEBAS UNITARIAS
 if __name__ == "__main__":
     opc = menu()
     if opc == '1':
