@@ -12,26 +12,31 @@ class bodega:
 #        self._ramo_encargado = {}
 
 # DATOS CARGADOS SOLO PARA PRUEBA DESPUES ELIMINAR Y DESCOMENTAR 3 LINEAS SUPERIORES
-        self._disenos = ['As8y7t2w_17','Cs8y7t1w_16','DL6p7z5a_18','Cs4y3t2w_9','GL8U7P5X_20']
+        self._disenos = ['As8y7t2w_17','Cs8y7t1w_16','DL6p7z5a_18','Cs4y3t2w_9','GL8U7P5X_20',
+                        'Cs9y9t9p9y9u9e1w_54', 'As2h7l1r_10']
         self._ramos_despachados = {}
-        self._ramo_encargado = {'De_A_para_B':'As8y7t2w_17', 'De_C_para_A':'Cs8y7t1w_16'}
+        self._ramo_encargado = {'De_A_para_B':'As8y7t2w_17', 'De_C_para_A':'Cs8y7t1w_16',
+                                'De_H_para_Q':'As2h7l1r_10', 'De_Z_para_A':'Cs9y9t9p9y9u9e1w_54'}
         print("Cree instancia bodega")
 # METODOS: 
 
     def Inv_bodega(self):
         print("_______________________________________________________________________________")
-        print("stock de flores")
+        print("Stock de flores")
         print("-------------------------------------------------------------------------------")
         for flr in self.flores:
             cuenta = 0
-            print("cantidad flor ", str(flr),"=",self.flores[flr])
+            t = ""
+            if self.flores[flr] < 5:
+                t = " ---> Se sugiere reabastecer!!!"
+            print("Cantidad disponible de flor ", str(flr),"=",self.flores[flr], t)
             cuenta +=1
-        time.sleep(3)
+        time.sleep(2)
         return
 
     def ramos_pendientes(self):
         print("_______________________________________________________________________________")
-        print("ramos por entregar")
+        print("Ramos por entregar")
         print("--------------------------------------------------------------------------------")
         for rmo in self._ramo_encargado:
             cuenta = 0
@@ -43,7 +48,7 @@ class bodega:
         
     def ramos_entregados(self): 
         print("_______________________________________________________________________________")
-        print("ramos entregados")
+        print("Ramos entregados")
         print("--------------------------------------------------------------------------------")
         for rmo in self._ramos_despachados:
             cuenta = 0
@@ -60,27 +65,27 @@ class bodega:
         print("añadi una flor a la lista")
 
     def anti(self):
-        print(self._ramo_encargado)
+        print("Ramos encargados: ", self._ramo_encargado)
 
     def disenar_ramos (self, diseno):
         self.disenos.append(diseno)
-        print("Clase 01 Metodo 2")
+#        print("Clase 01 Metodo 2")
 
     def despachar_ramos (self, ramo):
         self.ramos_despachados.append(ramo)
-        print("Clase 01 Metodo 3")
+#        print("Clase 01 Metodo 3")
 
     def encargar_ramos (self, nombre, diseno):
         self._ramo_encargado[nombre] = diseno
-        print("Clase 01 Metodo 3")
+#        print("Clase 01 Metodo 3")
 
     def pregunta(self):    
-        print(" Buenas, me podrías decir tú nombre? ")
-        nombre = input("ingrese nombre: ") # key
-        print("este es un nombre: ", nombre)
-        print()
+        print(" Hola soy el Bot Crist_IA_n! Me podrías decir tú nombre? ")
+        nombre = input("Ingrese nombre: ") # key
+#        print("este es un nombre: ", nombre)
+#        print()
         print("            ### Diseños disponibles ### ")
-        print("  Estos son los diseños disponibles:       ")
+        print(nombre, "  Estos son los diseños disponibles: ")
         condicion = True
         while condicion:
             time.sleep(1)
@@ -92,7 +97,7 @@ class bodega:
             z = input("Elige un diseño de ramo: ")
             try:
                 if int(z) in range(1,seleccion):
-                    print("lo que sea")
+#                    print("lo que sea")
                     self.encargar_ramos(nombre,disenos)
                     condicion = False
                 else:
@@ -102,7 +107,7 @@ class bodega:
 
     def evaluar_ramos(self):
         for ramo in self._ramo_encargado.copy():            
-            print(ramo, " encargo el diseno: ", self._ramo_encargado[ramo])
+            print("El cliente: " , ramo, " encargo el diseno: ", self._ramo_encargado[ramo])
                 #Trabajando sobre el diseno encargado!
                 #procede = verdadero hasta que no haya disponibilidad de alguna flor en el diseno
             procede = True
@@ -113,31 +118,32 @@ class bodega:
                 for letra in range(2, disenoAevaluar.find("_"), 2):
                     cantx = int(disenoAevaluar[letra])
                     florx = disenoAevaluar[letra +1].lower()
-                    print("Evaluando disponibilidad de flor: ", florx, " necesito: ", cantx)
+#                    print("Evaluando disponibilidad de flor: ", florx, " necesito: ", cantx)
     #VALIDACION DE SI HAY SUFICIENTE EN BODEGA Y REMPLAZAR EL "if not procede:"!!!!                    
                     if self.flores[florx] < cantx:
-                        print("NO HAY SUFICIENTE")
+                        print("No se puede despachar! No tenemos suficientes flores: ", florx)
                         #Se modifica procede para salir del while
                         procede = False
                         #se usa break para salir del for
                         break
                     else:
-                        print("HAY SUFICIENTE, EVALUA LA OTRA FLOR")
+                        pass
+#                        print("HAY SUFICIENTE, EVALUA LA OTRA FLOR")
     # En este punto procede indica si se puede procesar el ramo o no!
                 if not procede:
-                    print("Sorry! No se puede procesar")
+                    print("Enviaremos a Guido a buscar mas!!!")
                 else:
-                    print("ALELUYA!!!! Se puede despachar el ramo!")
+                    print("Fernando le entregara su ramo!")
                     #Se rebaja los inventarios
                     self.rebaja_stock(ramo)
                     #Se agrega el ramo a ramos despachados
-                    print("despachado!")
+#                    print("Se agrega el ramo a los despachados!")
                     self._ramos_despachados[ramo] = disenoAevaluar                        
                     #Se elimina el ramo de ramos pendientes
-                    print("eliminado de pendientes!")
+#                    print("Se eliminado el ramo de los pendientes!")
                     self.ramo_encargado.pop(ramo)
                     break
-                        
+        input("Presione cualquier tecla para volver al MENU")                
 ###########################################################################
     def rebaja_stock(self,ramo):
        # for ramo in self._ramo_encargado:           
@@ -156,7 +162,7 @@ class bodega:
 
 ###############Manejo Stock###########
     def carga_stock(self):
-        print("Estamos revistando el stock en bodega...")
+        print("Frank esta recargando el stock en bodega...")
         time.sleep(3)
         for flor in self.flores:
             while self.flores[flor] < 20:
@@ -166,8 +172,8 @@ class bodega:
 #                    time.sleep(0.1)
                 else:
                     pass
-        print("listo...")
-        print("Gracias por la espera")
+#        print("listo...")
+        print("Stock recargado. Gracias por la espera")
 
 ############# Propiedad flores #############
     @property ## propiedad getter
@@ -176,10 +182,10 @@ class bodega:
 
     @flores.setter ## propiedad setter
     def flores (self, nuevo):
-        print("modificando letra..")
+#        print("modificando letra..")
         self._flores = nuevo
-        print("la letra ha sido modificada")
-        print(self._flores)
+#        print("la letra ha sido modificada")
+#        print(self._flores)
 
     @flores.deleter ## propiedad deleter
     def flores(self):
@@ -193,9 +199,9 @@ class bodega:
 
     @ramo_encargado.setter ## propiedad setter
     def ramo_encargado (self, nuevo):
-        print("modificando letra..")
+#        print("modificando letra..")
         self._ramo_encargado = nuevo
-        print("la letra ha sido modificada")
+#        print("la letra ha sido modificada")
         print(self._ramo_encargado)
 
     @ramo_encargado.deleter ## propiedad deleter
@@ -209,9 +215,9 @@ class bodega:
 
     @disenos.setter ## propiedad setter
     def disenos (self, nuevo):
-        print("modificando letra..")
+#        print("modificando letra..")
         self._disenos = nuevo
-        print("la letra ha sido modificada")
+#        print("la letra ha sido modificada")
         print(self._disenos)
 
     @disenos.deleter ## propiedad deleter
@@ -243,4 +249,5 @@ if __name__ == "__main__":
     bodega1.carga_stock()
     print(bodega1.anti())
     bodega1.evaluar_ramos()
+    print(bodega1.anti())
     pass

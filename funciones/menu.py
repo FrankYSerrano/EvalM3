@@ -6,16 +6,16 @@ def menu():
     opciones_posibles = ['1', '2', '3', '4', '5', '6', '7', 'X', 'x']
     control = True
     while control: 
-        os.system("CLS")
+        os.system("cls")
         print("***************** MENU *****************")
         print("*                                      *")
         print("* Recepcion de Flores en Bodega   -> 1 *") 
         print("* Generar Disenos de Ramos        -> 2 *") 
-        print("* Seleccionar (Ordenar) Ramos     -> 3 *") # Guido
-        print("* Reporte de inventario de Bodega -> 4 *") # Cristian
-        print("* Reporte de Ramos pendientes     -> 5 *") # Cristian
-        print("* Reporte de Ramos entregados     -> 6 *") # Cristian
-        print("* Despachar un Ramo               -> 7 *") # TODOS
+        print("* Seleccionar (Ordenar) Ramos     -> 3 *")
+        print("* Reporte de inventario de Bodega -> 4 *")
+        print("* Reporte de Ramos pendientes     -> 5 *")
+        print("* Reporte de Ramos entregados     -> 6 *")
+        print("* Despachar un Ramo               -> 7 *")
         print("*       S   A   L   I   R         -> X *")
         print("*                                      *")
         print("****************************************")

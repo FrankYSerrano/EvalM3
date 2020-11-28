@@ -16,7 +16,7 @@ RamoDeseado = c.ramo()
 ciclo = True
 while ciclo:
     seleccion = f.menu()
-    print(seleccion)
+#    print(seleccion)
     if seleccion == '1':
         print("Recepcioando Flores... por favor espere...")
         FlorLinda.carga_stock()
@@ -26,7 +26,7 @@ while ciclo:
         FlorLinda.disenar_ramos(x)
     elif seleccion =='3': #Encargar ramo
         FlorLinda.pregunta()
-    elif seleccion =='4': #Reporte de inventario de flores en bodega
+    elif seleccion =='4': #4Reporte de inventario de flores en bodega
         FlorLinda.Inv_bodega()
     elif seleccion =='5': #Reporte de ramos pendientes por procesar
         FlorLinda.ramos_pendientes()
