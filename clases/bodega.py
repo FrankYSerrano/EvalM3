@@ -1,4 +1,5 @@
 import time 
+import os
 class bodega: 
 #ATRIBUTOS
     
@@ -73,9 +74,42 @@ class bodega:
         self.ramos_despachados.append(ramo)
         print("Clase 01 Metodo 3")
 
-    def encargar_ramos (self, ramo):
-        self._ramo_encargado.append(ramo)
+    def encargar_ramos (self, nombre, diseno):
+        self._ramo_encargado[nombre] = diseno
         print("Clase 01 Metodo 3")
+
+    def pregunta(self):    
+        print(" Buenas, me podrías decir tú nombre? ")
+        nombre = input("ingrese nombre: ") # key
+        print("este es un nombre: ", nombre)
+        print()
+        print("            ### Diseños disponibles ### ")
+        print("  Estos son los diseños disponibles:       ")
+        
+        condicion = True
+        while condicion:
+
+            time.sleep(1)
+            os.system("cls")
+            
+
+            seleccion = 1
+
+            for disenos in self._disenos:
+                print("Diseño N° ",str(seleccion), ":", disenos)
+                seleccion = seleccion + 1
+
+            z = input("Elige un diseño de ramo: ")
+            try:
+                if int(z) in range(1,seleccion):
+                    print("lo que sea")
+                    self.encargar_ramos(nombre,disenos)
+                    condicion = False
+                else:
+                    print("Selección fuera de rango, try again")
+
+            except Exception:
+                print("seleccion invalida ")        
 
 ###########################################################################
 #_ramos_despachados Y _ramo_encargado DEBEN SER DICCIONARIOS YA QUE TIENE UN DUENO Y UN DISENO!!!!!
@@ -231,13 +265,22 @@ class bodega:
 
 if __name__ == "__main__":
     bodega1 = bodega()
-    bodega1.evaluar_ramos()
-    bodega1.carga_stock()
+    #bodega1.evaluar_ramos()
+    #bodega1.carga_stock()
     print(bodega1.anti())
+
     bodega1.evaluar_ramos()
     print(bodega1.flores)
     bodega1.rebaja_stock()
     print(bodega1.flores)
+
+    
+    #bodega1.evaluar_ramos()
+
+    bodega1.ramos_pendientes()
+    bodega1.pregunta()
+    bodega1.ramos_pendientes()
+    
 
     #print(bodega1.flores)
     # bodega1.encargar_ramos('As8y7t2w17')
